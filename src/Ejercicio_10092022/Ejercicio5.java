@@ -20,7 +20,7 @@ public class Ejercicio5 {
             n1 = entrada.nextInt();
             total += n1;
 
-            if (n1 <= 0) {
+            if (n1 == 0) {
                 System.out.println("El programa ha finalizado");
                 System.out.println("Total de Valores ingresador: " + total );
                 break;
