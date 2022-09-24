@@ -1,14 +1,10 @@
 package POO_17092022;
 
 /*
-/*
  * Realizar un Menu con opcion Switch y un menu anidado para realziar operaciones varias, debera volver al menu principal mientras ejecuta su programa
  * hasta que se elija otra opcion debera iterar sin romper el ciclo.....................
- */
 
-/**
- *
- * @author Luis Alfredo Felipe Sic
+* @author Luis Alfredo Felipe Sic
  */
 import java.util.Scanner;
 
@@ -16,37 +12,41 @@ import java.util.Scanner;
 public class cuentaBanco {
 
     public static Scanner entrada = new Scanner(System.in);
-    public static Float SaldoCC1 = 300f;
+    public static Float SaldoCC1 = 300f, SaldoCC2 = 0f;
+    int opcion;
 
-    /*--Atributos--*/
-    String Nombre = "Luis Alfredo Felipe Sic";
-    String Banco = "Industrial BI ";
-    String Cuenta = "01414000-03";
+    public String ConsultaCuentas(String consulta) {
 
-    /*--Metodos--*/
-    public void consultarCC1() {
-        System.out.println("Nombre Cuenta: " + Nombre + " \r\n"
-                + "Banco: " + Banco + "\r\n"
-                + "No. Cuenta: " + Cuenta + "\r\n"
-                + "Saldo: Q." + SaldoCC1);
+        do {
+            System.out.println("Bienvenido! Seleccione una Operacion:\r\n"
+                    + " 1 Consultar Cuenta No. 1 \r\n"
+                    + " 2 Consultar Cuenta No. 2 \r\n"
+                    + " 0 para salir \r\n"
+                    + "");
+            opcion = entrada.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.println("Cuenta: Luis Alfredo Felipe Sic");
+                    System.out.println("Banco: BI Industrial");
+                    System.out.println("Cuenta: 01414000-03");
+                    System.out.println("Saldo: Q. " + SaldoCC1);
+                    break;
+                case 2:
+                    System.out.println("Cuenta: Jose Mendizabal Mazariegos ");
+                    System.out.println("Banco: Banco G&T");
+                    System.out.println("Cuenta: 05678000-03");
+                    System.out.println("Saldo: Q. " + SaldoCC1);
+                    break;
+                case 3:
+                    System.out.println("Opcion no Valida...!");
+                    break;
+            }
+
+        } while (opcion != 0);
+
+        return consulta;
     }
 
-    public void abonarCC1() {
-        System.out.print("Ingrese el Monto a abonar: ");
-        int n1 = entrada.nextInt();
-        SaldoCC1 += n1;
-        System.out.println("Su monto actual es de: " + "Q" + SaldoCC1 + ".00");
-    }
 
-    public void debitarCC1() {
-        System.out.print("Ingrese el Monto a debitar: ");
-        int n1 = entrada.nextInt();
-        if (SaldoCC1 < n1) {
-            System.out.println("Error, no tiene fondos suficientes Elija otra opcion!");
-        } else {
-            SaldoCC1 -= n1;
-            System.out.println("Su monto actual es de: " + "Q" + SaldoCC1 + ".00");
-        }
-    }
 
 }
